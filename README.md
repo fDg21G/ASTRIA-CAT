@@ -37,3 +37,6 @@ The objective of this work is to demonstrate, through experimental and synthetic
 ### Research Context
 This project represents an applied experimental study in aeronautical safety and predictive sensing.  
 It is developed
+### Relation to ASTRIA
+This project represents an applied experimental study inspired by system-level
+autonomous safety concepts explored in the ASTRIA architecture.
