@@ -1,0 +1,40 @@
+ASTRIA-CAT - EXPERIMENTAL RESULTS SUMMARY
+==========================================
+
+1. MACHINE LEARNING MODEL PERFORMANCE
+---------------------------------------
+Model Architecture: Quantized 1D-Convolutional Neural Network (1D-CNN)
+Dataset: Physics-informed synthetic turbulence signals
+Train/Test Split: 70% / 30%
+
+Final Test Metrics:
+  • Prediction Accuracy: 88.5%
+  • Recall (True Positive Rate): 93.0%
+  • Precision: 86.0%
+  • F1-Score: 0.89
+
+2. DEPLOYMENT & INFERENCE PERFORMANCE
+--------------------------------------
+Target Hardware: Arduino Nicla Vision (STM32H747)
+Framework: TensorFlow Lite for Microcontrollers (TFLM)
+
+Key Metrics:
+  • Inference Latency: < 60 milliseconds
+  • Model Size (Quantized): 45 KB
+  • Memory Footprint: < 150 KB
+  • Power Consumption Estimate: 12 mW (continuous inference)
+
+3. EXPERIMENTAL VALIDATION
+--------------------------
+Method: Wind-tunnel simulation with vortex shedding
+Early Warning Window: 2.0 - 3.0 seconds (before peak vertical acceleration)
+False Positive Rate: < 15% (on synthetic test set)
+
+4. KEY ACHIEVEMENT
+------------------
+This proof-of-concept demonstrates that edge-AI deployment for real-time,
+onboard CAT prediction is feasible with commercial, low-cost hardware.
+
+---
+*Results based on independent research by Houssam Rharbi (2025)*
+*Full methodology detailed in the accompanying dissertation.*
