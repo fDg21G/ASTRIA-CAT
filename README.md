@@ -49,3 +49,9 @@ ASTRIA-CAT/
 ├── data/                    # Synthetic Pressure Datasets
 ├── results/                 # Performance Graphs & Screenshots
 └── Dissertation.pdf         # Full Research Paper
+<div align="center">
+
+[![Read Dissertation](https://img.shields.io/badge/📄_Read_Full_Dissertation-PDF-red?style=for-the-badge&logo=adobeacrobatreader)](./ASTRIA_CAT_Dissertation_2026_Simulation_Verified.pdf)
+
+</div>
+
