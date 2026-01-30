@@ -1,42 +1,51 @@
-# ASTRIA-CAT
-Predictive detection of clear-air turbulence using MEMS sensors and edge AI
-# ASTRIA-CAT
+# ASTRIA-CAT: Predictive Clear-Air Turbulence (CAT) Detection
+### ✈️ AI-Powered "Smart Skin" for Next-Gen Avionics
 
-## Predictive Detection of Clear-Air Turbulence (CAT)
+![Status](https://img.shields.io/badge/Status-Simulation_Verified-success)
+![Platform](https://img.shields.io/badge/Platform-Edge_AI-blue)
+![Latency](https://img.shields.io/badge/Latency-Real_Time-brightgreen)
 
-**Author:** Houssam Rharbi  
-**Field:** Civil Aviation – Aeronautical Safety  
+> **Focus:** Aeronautical Safety / Edge Computing  
+> **Method:** Distributed Pressure Sensing & 1D-CNN Inference
 
-### Overview
-Clear-Air Turbulence (CAT) represents one of the most dangerous and unpredictable hazards in civil aviation, as it cannot be detected by conventional onboard radar systems.  
-This project proposes a predictive approach based on distributed pressure sensing and edge artificial intelligence to identify aerodynamic precursors of CAT in real time.
+---
 
-### Project Objective
-The objective of this work is to demonstrate, through experimental and synthetic data, that high-frequency pressure fluctuations measured on the aircraft surface can be used to anticipate clear-air turbulence before it is encountered.
+## 📋 Project Overview
+Clear-Air Turbulence (CAT) is invisible to conventional radar and remains a leading cause of in-flight injuries. **ASTRIA-CAT** proposes a paradigm shift: instead of relying on remote sensing, the aircraft uses a distributed array of MEMS pressure sensors ("Smart Skin") to detect the micro-scale aerodynamic precursors of turbulence **before the main jolt occurs**.
 
-### Methodology
-- Distributed MEMS pressure sensors simulating a "smart skin"
-- Physics-informed synthetic turbulence generation
-- Wind-tunnel experimental setup
-- Signal processing and feature extraction
-- Lightweight 1D Convolutional Neural Network (1D-CNN)
-- Edge deployment on Arduino-class hardware
+This repository hosts the **Real-Time Simulation Testbed**, demonstrating how an onboard Edge AI processor can analyze sensor streams and trigger autonomous alerts in milliseconds.
 
-### Results
-- Prediction accuracy: **88.5%**
-- Recall (turbulence detection): **93%**
-- Inference latency: **< 60 ms**
-- Demonstrated early-warning capability under experimental conditions
+---
 
-### Repository Content
-- `Dissertation.pdf` – Full research dissertation
-- `src/` – Signal processing and machine learning code
-- `data/` – Sample datasets (synthetic and experimental)
-- `results/` – Figures and performance metrics
+## 🚀 Key Features
 
-### Research Context
-This project represents an applied experimental study in aeronautical safety and predictive sensing.  
-It is developed
-### Relation to ASTRIA
-This project represents an applied experimental study inspired by system-level
-autonomous safety concepts explored in the ASTRIA architecture.
+### 1. "Smart Skin" Sensor Fusion
+- Simulates a distributed array of high-frequency MEMS pressure sensors.
+- Detects subtle **Kelvin-Helmholtz Instability (KHI)** waves, which are physical precursors to severe turbulence.
+
+### 2. Edge AI Inference
+- Deploys a lightweight **1D-Convolutional Neural Network (1D-CNN)** optimized for embedded flight computers.
+- **Latency:** < 60 ms inference time (Verified).
+- **Privacy:** All data is processed locally onboard; no cloud dependency.
+
+---
+
+## 📊 Live Simulation Results
+
+The system was tested using a "Turbulence Injection" scenario. As shown below, the Flight Computer successfully identifies the transition from *Laminar Flow* to *Turbulent Flow* and triggers a **CAT WARNING**.
+
+### 📸 Flight Computer Output (Terminal View)
+![Simulation Alert](./results/simulation_alert.jpg)
+*> Fig 1. Real-time telemetry log showing the AI model detecting a turbulence event (Probability > 85%) and triggering an automated alert.*
+
+---
+
+## 🛠️ Repository Structure
+
+```bash
+ASTRIA-CAT/
+├── src/
+│   └── cat_testbed.py       # [NEW] Flight Computer Simulation Script
+├── data/                    # Synthetic Pressure Datasets
+├── results/                 # Performance Graphs & Screenshots
+└── Dissertation.pdf         # Full Research Paper
