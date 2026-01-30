@@ -1,6 +1,13 @@
 # ASTRIA-CAT: Predictive Clear-Air Turbulence (CAT) Detection
 ### ✈️ AI-Powered "Smart Skin" for Next-Gen Avionics
 
+<div align="center">
+
+[![Read Dissertation](https://img.shields.io/badge/📄_Read_Full_Dissertation-PDF-red?style=for-the-badge&logo=adobeacrobatreader)](./ASTRIA_CAT_Dissertation_2026_Simulation_Verified.pdf)
+
+</div>
+
+
 ![Status](https://img.shields.io/badge/Status-Simulation_Verified-success)
 ![Platform](https://img.shields.io/badge/Platform-Edge_AI-blue)
 ![Latency](https://img.shields.io/badge/Latency-Real_Time-brightgreen)
@@ -51,7 +58,9 @@ ASTRIA-CAT/
 └── Dissertation.pdf         # Full Research Paper
 <div align="center">
 
-[![Read Dissertation](https://img.shields.io/badge/📄_Read_Full_Dissertation-PDF-red?style=for-the-badge&logo=adobeacrobatreader)](./ASTRIA_CAT_Dissertation_2026_Simulation_Verified.pdf)
 
-</div>
+
+
+
+
 
