@@ -1,66 +1,40 @@
-# ASTRIA-CAT: Predictive Clear-Air Turbulence (CAT) Detection
-### ✈️ AI-Powered "Smart Skin" for Next-Gen Avionics
+# ASTRIA-CAT: Physics-Informed Edge AI
 
-<div align="center">
+**Physics-Informed Spatiotemporal Architecture for Clear-Air Turbulence (CAT) Prediction.**
 
-[![Read Dissertation](https://img.shields.io/badge/📄_Read_Full_Dissertation-PDF-red?style=for-the-badge&logo=adobeacrobatreader)](./ASTRIA_CAT_Dissertation_2026_Simulation_Verified.pdf)
-
-</div>
-
-
-![Status](https://img.shields.io/badge/Status-Simulation_Verified-success)
-![Platform](https://img.shields.io/badge/Platform-Edge_AI-blue)
-![Latency](https://img.shields.io/badge/Latency-Real_Time-brightgreen)
-
-> **Focus:** Aeronautical Safety / Edge Computing  
-> **Method:** Distributed Pressure Sensing & 1D-CNN Inference
+![Status: V2 Research Phase](https://img.shields.io/badge/Status-V2_Research_Phase-blue.svg)
+![Platform: Edge AI](https://img.shields.io/badge/Platform-ARM_Cortex_A-darkblue.svg)
+![Latency: Bounded WCET](https://img.shields.io/badge/Latency-Hard_Real_Time-brightgreen.svg)
 
 ---
 
-## 📋 Project Overview
-Clear-Air Turbulence (CAT) is invisible to conventional radar and remains a leading cause of in-flight injuries. **ASTRIA-CAT** proposes a paradigm shift: instead of relying on remote sensing, the aircraft uses a distributed array of MEMS pressure sensors ("Smart Skin") to detect the micro-scale aerodynamic precursors of turbulence **before the main jolt occurs**.
+## 📋 System Overview
+**ASTRIA-CAT V2** is an embedded aerospace system that replaces traditional signal classification with a **physics-informed regression pipeline**. By utilizing dimensionless aerodynamic invariants ($C_p$, $R_i$), the system achieves stability-aware, turbulence-intensity prediction (EDR) capable of running on constrained ARM hardware.
 
-This repository hosts the **Real-Time Simulation Testbed**, demonstrating how an onboard Edge AI processor can analyze sensor streams and trigger autonomous alerts in milliseconds.
+## 📐 V2 Architectural Roadmap
+- **Input Transformation:** Nondimensionalization of raw pressure into Pressure Coefficient ($C_p$) and Richardson Number ($R_i$) to ensure flight-regime invariance.
+- **Inference Core:** **ST-GNN + TCN** (Spatiotemporal Graph Neural Network coupled with Dilated Temporal Convolutional Network).
+- **Execution:** Ahead-of-Time (AOT) compiled binaries via **Apache TVM**, ensuring deterministic Worst-Case Execution Time (WCET).
+- **Output:** Regression of ICAO-standard **Eddy Dissipation Rate (EDR)**.
 
----
+## 📄 Documentation
+For the complete engineering derivation, fluid dynamics consistency regularization, and the deployment roadmap:
+> **[Read the Technical Whitepaper (V2.0)](./papers/ASTRIA-CAT_Technical_Whitepaper.pdf)**
 
-## 🚀 Key Features
-
-### 1. "Smart Skin" Sensor Fusion
-- Simulates a distributed array of high-frequency MEMS pressure sensors.
-- Detects subtle **Kelvin-Helmholtz Instability (KHI)** waves, which are physical precursors to severe turbulence.
-
-### 2. Edge AI Inference
-- Deploys a lightweight **1D-Convolutional Neural Network (1D-CNN)** optimized for embedded flight computers.
-- **Latency:** < 60 ms inference time (Verified).
-- **Privacy:** All data is processed locally onboard; no cloud dependency.
-
----
-
-## 📊 Live Simulation Results
-
-The system was tested using a "Turbulence Injection" scenario. As shown below, the Flight Computer successfully identifies the transition from *Laminar Flow* to *Turbulent Flow* and triggers a **CAT WARNING**.
-
-### 📸 Flight Computer Output (Terminal View)
-![Simulation Alert](./results/simulation_alert.jpg)
-*> Fig 1. Real-time telemetry log showing the AI model detecting a turbulence event (Probability > 85%) and triggering an automated alert.*
-
----
+## 📊 Performance Summary
+| Metric | Specification |
+| :--- | :--- |
+| **Inference Model** | Quantized 1D-CNN / ST-GNN |
+| **Quantization** | INT8 (Quantization-Aware Training) |
+| **Target Hardware** | ARM Cortex-A (Embedded Flight Computer) |
+| **Compute Bound** | Deterministic (Static Memory Arena) |
 
 ## 🛠️ Repository Structure
-
 ```bash
 ASTRIA-CAT/
-├── src/
-│   └── cat_testbed.py       # [NEW] Flight Computer Simulation Script
-├── data/                    # Synthetic Pressure Datasets
-├── results/                 # Performance Graphs & Screenshots
-└── Dissertation.pdf         # Full Research Paper
-<div align="center">
-
-
-
-
-
-
-
+├── core_cpp/          # Native C++ / Rust kernels
+├── data/              # Atmospheric physics synthetic datasets
+├── papers/            # Technical Whitepaper & Architectural Docs
+├── src/               # ST-GNN + TCN Implementation (PyTorch/TVM)
+└── requirements.txt   # Embedded inference dependencies
+Author: Houssam Rharbi - Independent Systems Researcher
