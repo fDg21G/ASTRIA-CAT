@@ -19,7 +19,7 @@
 
 ## 📄 Documentation
 For the complete engineering derivation, fluid dynamics consistency regularization, and the deployment roadmap:
-> **[Read the Technical Whitepaper (V2.0)](./papers/ASTRIA-CAT_Technical_Whitepaper.pdf)**
+> **[Read the Technical Whitepaper (V2.0)](./ASTRIA-CAT_Technical_Whitepaper.pdf)**
 
 ## 📊 Performance Summary
 | Metric | Specification |
